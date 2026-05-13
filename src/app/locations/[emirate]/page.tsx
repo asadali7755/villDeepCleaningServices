@@ -25,11 +25,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const siteUrl = process.env.SITE_URL || "http://localhost:3000";
   return {
-    title: `${emirate.metaTitle} | Villa, Apartment & Deep Cleaning ${emirate.name}`,
-    description: `${emirate.metaDescription} Best villa cleaning, apartment cleaning, deep cleaning & office cleaning in ${emirate.name}. Call +971 551 275 545.`,
-    keywords: [`cleaning services ${emirate.name}`, `villa cleaning ${emirate.name}`, `apartment cleaning ${emirate.name}`, `deep cleaning ${emirate.name}`, `office cleaning ${emirate.name}`, `house cleaning ${emirate.name}`, `maid service ${emirate.name}`],
+    title: `${emirate.metaTitle} | Al Haya Cleaning Services`,
+    description: emirate.metaDescription,
+    keywords: [
+      `cleaning services ${emirate.name}`,
+      `villa cleaning ${emirate.name}`,
+      `apartment cleaning ${emirate.name}`,
+      `deep cleaning ${emirate.name}`,
+      `cleaning company ${emirate.name}`,
+      `home cleaning ${emirate.name}`,
+      `maid service ${emirate.name}`,
+    ],
     openGraph: {
-      title: emirate.metaTitle,
+      title: `${emirate.metaTitle} | Al Haya Cleaning Services`,
       description: emirate.metaDescription,
       url: `${siteUrl}/locations/${emirate.slug}`,
       images: [{ url: emirate.heroImage }],

@@ -37,18 +37,21 @@ export function ServiceGallery({ serviceName, images }: ServiceGalleryProps) {
       {/* Single Row - Left to Right */}
       <div className="relative overflow-hidden">
         <div className="flex gap-2 sm:gap-6 animate-marquee whitespace-nowrap">
-          {[...allImages, ...allImages, ...allImages, ...allImages].map((src, i) => (
+          {[...allImages, ...allImages].map((src, i) => (
             <div
               key={`g-${i}`}
               className="relative flex-shrink-0 w-[110px] sm:w-[420px] h-[110px] sm:h-[340px] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer border-2 border-gold/20 hover:border-gold transition-all duration-500"
             >
               <Image
                 src={src}
-                alt={`${serviceName} work sample ${i + 1}`}
+                alt={`${serviceName} work sample ${(i % allImages.length) + 1}`}
                 fill
                 sizes="(max-width: 640px) 110px, 420px"
-                quality={55}
-                loading="lazy"
+                quality={60}
+                priority={i < allImages.length}
+                loading={i < allImages.length ? "eager" : "lazy"}
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/wAARCAABAAEDASIAAhEBAxEB/8QAFAABAAAAAAAAAAAAAAAAAAAACf/EABQQAQAAAAAAAAAAAAAAAAAAAAD/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AJQAB/9k="
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

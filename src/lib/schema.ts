@@ -19,31 +19,36 @@ export function generateOrganizationSchema() {
   };
 }
 
-export function generateLocalBusinessSchema(location?: string) {
+export function generateLocalBusinessSchema(city?: string, emirate?: string) {
+  const localityLabel = city || "Dubai";
+  const regionLabel = emirate || city || "Dubai";
   return {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": `${siteUrl()}/#localbusiness`,
-    name: "Al Haya Cleaning Services",
+    "@type": "CleaningService",
+    "@id": `${siteUrl()}/#cleaningservice`,
+    name: city
+      ? `Al Haya Cleaning Services ${city}`
+      : "Al Haya Cleaning Services",
     description:
-      "Professional villa cleaning, apartment cleaning, deep cleaning & office cleaning services across the UAE. Eco-friendly products, trained staff, satisfaction guaranteed.",
+      "Specialized villa deep cleaning, apartment cleaning, and home sanitization services in Dubai and across all 7 UAE Emirates. Eco-friendly products, trained & vetted staff.",
     url: siteUrl(),
     telephone: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971551275545",
     email: "Madinatalhaya@gmail.com",
     image: `${siteUrl()}/images/hero/hero-main.webp`,
     address: {
       "@type": "PostalAddress",
-      addressLocality: location || "Dubai",
-      addressRegion: location || "Dubai",
+      streetAddress: "Al Haya Cleaning Services Office",
+      addressLocality: localityLabel,
+      addressRegion: regionLabel,
       addressCountry: "AE",
     },
-    geo: location ? undefined : {
+    geo: {
       "@type": "GeoCoordinates",
-      latitude: "25.2048",
-      longitude: "55.2708",
+      latitude: 25.2048,
+      longitude: 55.2708,
     },
-    areaServed: location
-      ? { "@type": "City", name: location }
+    areaServed: city
+      ? [{ "@type": "City", name: city }]
       : [
           { "@type": "City", name: "Dubai" },
           { "@type": "City", name: "Abu Dhabi" },
@@ -74,17 +79,28 @@ export function generateLocalBusinessSchema(location?: string) {
 export function generateServiceSchema(service: {
   name: string;
   description: string;
+  slug?: string;
+  image?: string;
 }) {
   return {
     "@context": "https://schema.org",
-    "@type": "Service",
+    "@type": "CleaningService",
     name: service.name,
     description: service.description,
+    ...(service.slug && { url: `${siteUrl()}/services/${service.slug}` }),
+    ...(service.image && { image: `${siteUrl()}${service.image}` }),
+    serviceType: service.name,
     provider: {
-      "@type": "LocalBusiness",
+      "@type": "CleaningService",
       name: "Al Haya Cleaning Services",
       url: siteUrl(),
       telephone: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971551275545",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Dubai",
+        addressRegion: "Dubai",
+        addressCountry: "AE",
+      },
     },
     areaServed: [
       { "@type": "City", name: "Dubai" },

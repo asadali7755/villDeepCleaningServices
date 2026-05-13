@@ -23,11 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const siteUrl = process.env.SITE_URL || "http://localhost:3000";
 
   return {
-    title: `${service.metaTitle} | Best ${service.name} Dubai, Abu Dhabi`,
-    description: `${service.metaDescription} Serving Dubai, Abu Dhabi, Sharjah & all 7 Emirates. Call +971 551 275 545 for free quote.`,
+    title: `${service.metaTitle} | Al Haya Cleaning Services`,
+    description: service.metaDescription,
     keywords: service.keywords,
     openGraph: {
-      title: service.metaTitle,
+      title: `${service.metaTitle} | Al Haya Cleaning Services`,
       description: service.metaDescription,
       url: `${siteUrl}/services/${service.slug}`,
       type: "website",
@@ -48,7 +48,7 @@ export default async function ServicePage({ params }: PageProps) {
 
   return (
     <>
-      <JsonLd data={generateServiceSchema({ name: service.name, description: service.description })} />
+      <JsonLd data={generateServiceSchema({ name: service.name, description: service.description, slug: service.slug, image: service.image })} />
       <JsonLd
         data={generateBreadcrumbSchema([
           { name: "Home", url: siteUrl },

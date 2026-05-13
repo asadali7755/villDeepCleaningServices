@@ -47,41 +47,74 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
         </div>
       </section>
 
-      <div className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-16">
+      {/* Description Section */}
+      <section className="relative py-24 px-4 overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-gold/5 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-gold/5 blur-3xl pointer-events-none" />
+
+        <div className="max-w-5xl mx-auto relative">
+
+          {/* Top label */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/30 mb-6">
+            <Sparkles className="w-4 h-4 text-gold" />
+            <span className="text-sm font-bold text-gold tracking-widest uppercase">About This Service</span>
+          </div>
+
+          {/* Section heading */}
+          <h2 className="font-display text-3xl md:text-5xl font-bold mb-14 leading-tight" style={{ color: "var(--text-primary)" }}>
+            Why Choose <span className="text-gold">Al Haya</span> for<br className="hidden md:block" /> {service.name}?
+          </h2>
+
+          {/* Paragraphs — numbered with gold accent */}
+          <div className="space-y-10 mb-20">
             {service.description.split("\n\n").map((paragraph, i) => (
-              <p
-                key={i}
-                className="mb-6 leading-[1.9] text-xl md:text-2xl font-light tracking-wide"
-                style={{ color: "var(--text-secondary)" }}
-              >
-                {paragraph}
-              </p>
+              <div key={i} className="flex gap-6 md:gap-10 items-start group">
+                {/* Number */}
+                <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gold/10 border border-gold/30 flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-all duration-300">
+                  <span className="font-display font-bold text-gold group-hover:text-white transition-colors duration-300 text-lg">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                {/* Text */}
+                <div className="flex-1 pt-2">
+                  <div className="w-10 h-0.5 bg-gold/40 rounded-full mb-4 group-hover:w-20 group-hover:bg-gold transition-all duration-500" />
+                  <p className="text-lg md:text-xl leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                    {paragraph}
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
 
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+          {/* Benefits — dark card with image bg */}
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <Image
               src={service.image}
               alt={`${service.name} benefits background`}
               fill
-              sizes="(max-width: 768px) 100vw, 800px"
+              sizes="(max-width: 768px) 100vw, 900px"
               className="object-cover"
             />
-            <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(15,20,25,0.92) 0%, rgba(26,35,50,0.88) 50%, rgba(15,20,25,0.95) 100%)" }} />
-            <div className="relative p-8 md:p-12">
-              <h2 className="font-display text-3xl md:text-4xl font-bold mb-2 text-white">
-                Key Benefits
-              </h2>
-              <div className="w-20 h-1 bg-gold rounded-full mb-8" />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(15,20,25,0.95) 0%, rgba(26,35,50,0.90) 50%, rgba(15,20,25,0.97) 100%)" }} />
+
+            <div className="relative p-8 md:p-14">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-xl bg-gold/20 border border-gold/40 flex items-center justify-center">
+                  <Award className="w-5 h-5 text-gold" />
+                </div>
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-white">
+                  Key Benefits
+                </h2>
+              </div>
+              <div className="w-24 h-1 bg-gradient-to-r from-gold to-gold/20 rounded-full mb-10" />
+
               <ul className="space-y-5">
                 {service.benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-4">
-                    <div className="w-9 h-9 rounded-full bg-gold flex items-center justify-center flex-shrink-0 mt-1 shadow-lg">
-                      <Check className="w-5 h-5 text-white" strokeWidth={3} />
+                  <li key={index} className="flex items-start gap-4 group/item">
+                    <div className="w-9 h-9 rounded-full bg-gold/20 border border-gold/40 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:bg-gold group-hover/item:border-gold transition-all duration-300 shadow-lg">
+                      <Check className="w-4 h-4 text-gold group-hover/item:text-white transition-colors duration-300" strokeWidth={3} />
                     </div>
-                    <span className="text-xl md:text-2xl leading-relaxed font-medium text-gray-100">
+                    <span className="text-lg md:text-xl leading-relaxed text-gray-200 group-hover/item:text-white transition-colors duration-300">
                       {benefit}
                     </span>
                   </li>
@@ -89,8 +122,9 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
               </ul>
             </div>
           </div>
+
         </div>
-      </div>
+      </section>
 
       <ServiceGallery serviceName={service.name} images={serviceGalleries[service.slug] || []} />
 

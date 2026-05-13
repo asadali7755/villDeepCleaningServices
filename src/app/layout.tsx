@@ -20,26 +20,28 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Al Haya Cleaning Services | Villa & Apartment Cleaning Dubai, Abu Dhabi, UAE",
-    template: "%s | Al Haya Cleaning Services UAE",
+    default: "Villa Cleaning Dubai | Al Haya Cleaning Services UAE",
+    template: "%s",
   },
   description:
-    "Best villa cleaning, apartment cleaning, deep cleaning & office cleaning services in Dubai, Abu Dhabi, Sharjah & all UAE Emirates. Professional cleaners, eco-friendly products. Call +971 551 275 545 for a free quote.",
+    "Top-rated villa & apartment cleaning in Dubai & all UAE Emirates. Eco-friendly products, trained staff. Trusted by 5000+ families. Call +971 551 275 545.",
   keywords: [
-    "cleaning services Dubai", "villa cleaning Dubai", "apartment cleaning Dubai",
-    "deep cleaning Dubai", "office cleaning Dubai", "cleaning company UAE",
-    "house cleaning Abu Dhabi", "maid service Dubai", "cleaning services Abu Dhabi",
-    "cleaning services Sharjah", "move out cleaning Dubai", "sofa cleaning Dubai",
-    "carpet cleaning Dubai", "window cleaning Dubai", "post construction cleaning Dubai",
-    "professional cleaning UAE", "home cleaning Dubai", "best cleaning company Dubai",
-    "affordable cleaning services Dubai", "cleaning services near me",
+    "villa cleaning Dubai", "apartment cleaning Dubai", "deep cleaning Dubai",
+    "cleaning services Dubai", "villa cleaning UAE", "office cleaning Dubai",
+    "maid service Dubai", "home cleaning Dubai", "cleaning company Dubai",
+    "move out cleaning Dubai", "sofa cleaning Dubai", "carpet cleaning Dubai",
+    "window cleaning Dubai", "post construction cleaning Dubai",
+    "cleaning services Abu Dhabi", "cleaning services Sharjah",
+    "professional cleaning UAE", "best cleaning company Dubai",
   ],
   metadataBase: new URL(process.env.SITE_URL || "http://localhost:3000"),
   openGraph: {
     type: "website",
     locale: "en_AE",
     siteName: "Al Haya Cleaning Services",
-    images: [{ url: "/images/hero/hero-main.webp", width: 1920, height: 1080, alt: "Al Haya Cleaning Services - Professional Cleaning in UAE" }],
+    title: "Villa Cleaning Dubai | Al Haya Cleaning Services UAE",
+    description: "Top-rated villa & apartment cleaning in Dubai & all UAE Emirates. Eco-friendly products, trained staff. Trusted by 5000+ families. Call +971 551 275 545.",
+    images: [{ url: "/images/hero/hero-main.webp", width: 1920, height: 1080, alt: "Al Haya Cleaning Services - Professional Villa Cleaning Dubai UAE" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -52,9 +54,18 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: process.env.SITE_URL || "http://localhost:3000",
+    languages: {
+      "en-AE": process.env.SITE_URL || "http://localhost:3000",
+    },
   },
   verification: {
     google: "Ol568I9cq3MjpiwjyX6L-LbunjtcXvdn15GY3cGTng0",
+  },
+  other: {
+    "geo.region": "AE-DU",
+    "geo.placename": "Dubai",
+    "geo.position": "25.2048;55.2708",
+    "ICBM": "25.2048, 55.2708",
   },
 };
 

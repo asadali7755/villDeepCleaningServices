@@ -32,11 +32,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const siteUrl = process.env.SITE_URL || "http://localhost:3000";
   return {
-    title: `${city.metaTitle} | Best Cleaning Company in ${city.name}`,
-    description: `${city.metaDescription} Villa cleaning, apartment cleaning, deep cleaning in ${city.name}, ${emirate.name}. Call +971 551 275 545 for free quote.`,
-    keywords: [`cleaning services ${city.name}`, `villa cleaning ${city.name}`, `apartment cleaning ${city.name}`, `deep cleaning ${city.name}`, `house cleaning ${city.name}`, `maid service ${city.name} ${emirate.name}`],
+    title: `${city.metaTitle} | Al Haya Cleaning Services`,
+    description: city.metaDescription,
+    keywords: [
+      `cleaning services ${city.name} ${emirate.name}`,
+      `villa cleaning ${city.name}`,
+      `apartment cleaning ${city.name}`,
+      `deep cleaning ${city.name}`,
+      `home cleaning ${city.name} ${emirate.name}`,
+      `maid service ${city.name}`,
+    ],
     openGraph: {
-      title: city.metaTitle,
+      title: `${city.metaTitle} | Al Haya Cleaning Services`,
       description: city.metaDescription,
       url: `${siteUrl}/locations/${eSlug}/${cSlug}`,
       images: [{ url: city.image || emirate.heroImage }],
@@ -56,7 +63,7 @@ export default async function CityPage({ params }: PageProps) {
 
   return (
     <>
-      <JsonLd data={generateLocalBusinessSchema(`${city.name}, ${emirate.name}`)} />
+      <JsonLd data={generateLocalBusinessSchema(city.name, emirate.name)} />
       <JsonLd data={generateBreadcrumbSchema([
         { name: "Home", url: siteUrl },
         { name: "Locations", url: `${siteUrl}/#locations` },
