@@ -44,7 +44,7 @@ export function ServiceGallery({ serviceName, images }: ServiceGalleryProps) {
             >
               <Image
                 src={src}
-                alt={`${serviceName} work sample ${(i % allImages.length) + 1}`}
+                alt={`Professional ${serviceName} in Dubai UAE - Al Haya result ${(i % allImages.length) + 1}`}
                 fill
                 sizes="(max-width: 640px) 110px, 420px"
                 quality={60}

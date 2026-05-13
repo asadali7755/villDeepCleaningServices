@@ -32,7 +32,7 @@ export default function AboutPage() {
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <Image
           src="/images/hero/hero-main.webp"
-          alt="About Al Haya Cleaning Services"
+          alt="Professional Cleaning Services in Dubai UAE - Al Haya Cleaning Team"
           fill
           priority
           sizes="100vw"
@@ -129,7 +129,7 @@ export default function AboutPage() {
               <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/services/villa-cleaning.webp"
-                  alt="Al Haya Cleaning Team"
+                  alt="Al Haya Professional Villa Cleaning Team Dubai UAE - 10+ Years Experience"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"

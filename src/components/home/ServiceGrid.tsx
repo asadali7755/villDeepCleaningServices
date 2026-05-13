@@ -18,7 +18,7 @@ export function ServiceGrid() {
               <div className="group relative overflow-hidden rounded-xl min-h-[280px] cursor-pointer">
                 <Image
                   src={service.image}
-                  alt={`${service.name} in Dubai & UAE - Al Haya Cleaning Services`}
+                  alt={`Professional ${service.name} Service in Dubai, UAE - Al Haya`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"

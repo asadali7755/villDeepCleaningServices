@@ -66,7 +66,7 @@ export default async function EmiratePage({ params }: PageProps) {
       <section className="relative h-[55vh] sm:h-[65vh] lg:h-[80vh] flex items-center overflow-hidden">
         <Image
           src={emirate.heroImage}
-          alt={`${emirate.name} skyline`}
+          alt={`Professional Cleaning Services in ${emirate.name}, UAE - Al Haya`}
           fill
           priority
           loading="eager"
@@ -105,7 +105,7 @@ export default async function EmiratePage({ params }: PageProps) {
                 <div className="group relative overflow-hidden rounded-xl min-h-[220px] cursor-pointer">
                   <Image
                     src={city.image || emirate.image || "/images/default-area.webp"}
-                    alt={city.name}
+                    alt={`Cleaning Services in ${city.name}, ${emirate.name} UAE - Al Haya`}
                     fill
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -133,7 +133,7 @@ export default async function EmiratePage({ params }: PageProps) {
                 <div className="group relative overflow-hidden rounded-xl min-h-[240px] cursor-pointer">
                   <Image
                     src={service.image}
-                    alt={service.name}
+                    alt={`Professional ${service.name} in ${emirate.name}, UAE - Al Haya`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"

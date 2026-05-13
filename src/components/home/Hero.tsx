@@ -6,7 +6,7 @@ export function Hero() {
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       <Image
         src="/images/hero/hero-main.webp"
-        alt="Professional villa and apartment cleaning services in Dubai and UAE - Al Haya Cleaning"
+        alt="Professional Villa Cleaning and Deep Cleaning Services in Dubai, UAE - Al Haya"
         fill
         priority
         loading="eager"

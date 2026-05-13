@@ -19,7 +19,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
       <section className="relative h-[55vh] sm:h-[65vh] lg:h-[80vh] flex items-center overflow-hidden">
         <Image
           src={service.image}
-          alt={`${service.name} in Dubai & UAE - Al Haya Cleaning Services`}
+          alt={`Professional ${service.name} Service in Dubai, UAE - Al Haya`}
           fill
           priority
           loading="eager"
@@ -91,7 +91,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <Image
               src={service.image}
-              alt={`${service.name} benefits background`}
+              alt={`Professional ${service.name} Dubai UAE - Al Haya Cleaning`}
               fill
               sizes="(max-width: 768px) 100vw, 900px"
               className="object-cover"
@@ -158,7 +158,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
                     <div className="relative overflow-hidden rounded-3xl h-[320px] shadow-xl border border-gold/10 group-hover:border-gold/50 transition-all duration-500 group-hover:shadow-gold/20 group-hover:shadow-2xl group-hover:-translate-y-2">
                       <Image
                         src={rel.image}
-                        alt={rel.name}
+                        alt={`Professional ${rel.name} Service in Dubai, UAE`}
                         fill
                         sizes="(max-width: 640px) 100vw, 33vw"
                         className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -203,7 +203,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
                 <div className="group relative overflow-hidden rounded-xl min-h-[220px] cursor-pointer">
                   <Image
                     src={emirate.heroImage || emirate.image}
-                    alt={`${service.name} in ${emirate.name}`}
+                    alt={`Professional ${service.name} in ${emirate.name}, UAE - Al Haya`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
