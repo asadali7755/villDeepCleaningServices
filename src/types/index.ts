@@ -9,6 +9,7 @@ export interface Service {
   keywords: string[];
   metaTitle: string;
   metaDescription: string;
+  relatedServices?: string[];
 }
 
 export interface Emirate {

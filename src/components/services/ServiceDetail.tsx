@@ -3,8 +3,9 @@ import Image from "next/image";
 import type { Service } from "@/types";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Check, ChevronRight, MapPin, Shield, Clock, Award, Sparkles, Users, Leaf, ThumbsUp, Star } from "lucide-react";
+import { Check, ChevronRight, MapPin, Shield, Clock, Award, Sparkles, Users, Leaf, ThumbsUp, Star, ArrowRight } from "lucide-react";
 import { emirates } from "@/data/locations";
+import { services } from "@/data/services";
 import { serviceGalleries } from "@/data/service-galleries";
 import { ServiceGallery } from "@/components/services/ServiceGallery";
 
@@ -127,6 +128,68 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
       </section>
 
       <ServiceGallery serviceName={service.name} images={serviceGalleries[service.slug] || []} />
+
+      {/* You May Also Need */}
+      {service.relatedServices && service.relatedServices.length > 0 && (() => {
+        const related = service.relatedServices
+          .map((slug) => services.find((s) => s.slug === slug))
+          .filter(Boolean) as Service[];
+        if (related.length === 0) return null;
+        return (
+          <section className="py-24 px-4 relative overflow-hidden" style={{ backgroundColor: "var(--bg-secondary)" }}>
+            <div className="absolute top-0 left-1/3 w-96 h-96 rounded-full bg-gold/5 blur-3xl pointer-events-none" />
+            <div className="max-w-7xl mx-auto relative">
+              <div className="text-center mb-14">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/30 mb-5">
+                  <Sparkles className="w-4 h-4 text-gold" />
+                  <span className="text-sm font-bold text-gold tracking-widest uppercase">Complete Your Home Care</span>
+                </div>
+                <h2 className="font-display text-4xl md:text-5xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+                  You May Also <span className="text-gold">Need</span>
+                </h2>
+                <p className="text-lg max-w-xl mx-auto" style={{ color: "var(--text-muted)" }}>
+                  Explore our other professional cleaning services across Dubai & UAE
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {related.map((rel) => (
+                  <Link key={rel.slug} href={`/services/${rel.slug}`} className="group block">
+                    <div className="relative overflow-hidden rounded-3xl h-[320px] shadow-xl border border-gold/10 group-hover:border-gold/50 transition-all duration-500 group-hover:shadow-gold/20 group-hover:shadow-2xl group-hover:-translate-y-2">
+                      <Image
+                        src={rel.image}
+                        alt={rel.name}
+                        fill
+                        sizes="(max-width: 640px) 100vw, 33vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+
+                      {/* Gold top line animation */}
+                      <div className="absolute top-0 left-0 h-1 w-0 bg-gradient-to-r from-gold to-gold/40 group-hover:w-full transition-all duration-500 rounded-t-3xl" />
+
+                      <div className="absolute bottom-0 left-0 right-0 p-7">
+                        <h3 className="font-display text-2xl font-bold text-white mb-2 group-hover:text-gold transition-colors duration-300">
+                          {rel.name}
+                        </h3>
+                        <p className="text-sm text-gray-300 leading-relaxed mb-5 line-clamp-2">
+                          {rel.shortDescription}
+                        </p>
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/20 border border-gold/40 group-hover:bg-gold group-hover:border-gold transition-all duration-300">
+                          <span className="text-sm font-bold text-gold group-hover:text-white transition-colors duration-300">
+                            Learn More
+                          </span>
+                          <ArrowRight className="w-4 h-4 text-gold group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
       <section className="py-16 px-4" style={{ backgroundColor: "var(--bg-secondary)" }}>
         <div className="max-w-7xl mx-auto">
