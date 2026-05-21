@@ -16,6 +16,17 @@ function checkRateLimit(ip: string): boolean {
   return true;
 }
 
+// Return 405 for GET so Google doesn't get a 403 when crawling /api/contact
+export async function GET() {
+  return NextResponse.json(
+    { message: "Method not allowed. Use POST." },
+    {
+      status: 405,
+      headers: { Allow: "POST", "X-Robots-Tag": "noindex, nofollow" },
+    }
+  );
+}
+
 export async function POST(request: Request) {
   try {
     const ip = request.headers.get("x-forwarded-for") || "unknown";

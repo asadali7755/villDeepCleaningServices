@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
 import { Home, Search } from "lucide-react";
+
+// Tell Google: do NOT index 404 pages
+export const metadata: Metadata = {
+  title: "Page Not Found | Al Haya Cleaning Services",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function NotFound() {
   return (
