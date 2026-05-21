@@ -1,12 +1,38 @@
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /_next/
 
-# Block WordPress paths (not used but protects against scanners)
+# ── Block old Hostinger/WordPress date-based URLs ──────────────────────────────
+Disallow: /2025/
+Disallow: /2024/
+Disallow: /2023/
+Disallow: /2022/
+Disallow: /2021/
+
+# ── Block WordPress taxonomy & archive pages ────────────────────────────────────
+Disallow: /category/
+Disallow: /tag/
+Disallow: /author/
+Disallow: /page/
+Disallow: /feed/
+Disallow: /comments/
+
+# ── Block WordPress admin & core files ─────────────────────────────────────────
 Disallow: /wp-admin/
 Disallow: /wp-content/
 Disallow: /wp-login.php
 Disallow: /wp-json/
+Disallow: /wp-sitemap.xml
+Disallow: /wp-sitemap-posts-post-1.xml
+
+# ── Block Next.js internals ─────────────────────────────────────────────────────
+Disallow: /api/
+Disallow: /_next/
+
+# ── Block WordPress query strings (search, post IDs etc) ───────────────────────
+Disallow: /*?p=
+Disallow: /*?page_id=
+Disallow: /*?cat=
+Disallow: /*?s=
+Disallow: /*?author=
 
 Sitemap: https://villadeepcleaning.com/sitemap.xml
