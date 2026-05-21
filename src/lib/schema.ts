@@ -1,51 +1,88 @@
 const siteUrl = () => process.env.SITE_URL || "http://localhost:3000";
 
+const SOCIAL_PROFILES = [
+  "https://www.instagram.com/alhayacleaningllc/",
+  "https://www.facebook.com/villadeepcleaningservicesdubai/",
+  "https://www.pinterest.com/DeepCleaningdubai/",
+  "https://x.com/alhayacleaner",
+];
+
+const PHONE = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971563129254";
+
+const AGGREGATE_RATING = {
+  "@type": "AggregateRating",
+  ratingValue: 4.9,
+  reviewCount: 500,
+  bestRating: 5,
+  worstRating: 1,
+};
+
+// ─── Organization Schema ───────────────────────────────────────────────────────
 export function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${siteUrl()}/#organization`,
     name: "Al Haya Cleaning Services",
     url: siteUrl(),
-    logo: `${siteUrl()}/images/hero/hero-main.webp`,
-    description: "Professional villa, apartment, deep cleaning & office cleaning services across all 7 UAE Emirates.",
-    telephone: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971563129254",
+    // Google requires logo to be an ImageObject, NOT a plain string
+    logo: {
+      "@type": "ImageObject",
+      url: `${siteUrl()}/images/hero/hero-main.webp`,
+      width: 1920,
+      height: 1080,
+    },
+    description:
+      "Professional villa, apartment, deep cleaning & office cleaning services across all 7 UAE Emirates.",
+    telephone: PHONE,
     email: "Madinatalhaya@gmail.com",
     foundingDate: "2015",
     areaServed: {
       "@type": "Country",
       name: "United Arab Emirates",
     },
-    sameAs: [
-      "https://www.instagram.com/alhayacleaningllc/",
-      "https://www.facebook.com/villadeepcleaningservicesdubai/",
-      "https://www.pinterest.com/DeepCleaningdubai/",
-      "https://x.com/alhayacleaner",
-    ],
+    sameAs: SOCIAL_PROFILES,
   };
 }
 
+// ─── Local Business Schema ─────────────────────────────────────────────────────
 export function generateLocalBusinessSchema(city?: string, emirate?: string) {
   const localityLabel = city || "Dubai";
   const regionLabel = emirate || city || "Dubai";
+
+  // Unique @id per city so Google doesn't see duplicate IDs across pages
+  const idSlug = city
+    ? city.toLowerCase().replace(/\s+/g, "-")
+    : "home";
+
   return {
     "@context": "https://schema.org",
-    "@type": "CleaningService",
-    "@id": `${siteUrl()}/#cleaningservice`,
+    // Use array of types — more explicit, avoids ambiguity with CleaningService
+    "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+    "@id": `${siteUrl()}/#localbusiness-${idSlug}`,
     name: city
       ? `Al Haya Cleaning Services ${city}`
       : "Al Haya Cleaning Services",
     description:
       "Specialized villa deep cleaning, apartment cleaning, and home sanitization services in Dubai and across all 7 UAE Emirates. Eco-friendly products, trained & vetted staff.",
     url: siteUrl(),
-    telephone: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971563129254",
+    telephone: PHONE,
     email: "Madinatalhaya@gmail.com",
-    image: `${siteUrl()}/images/hero/hero-main.webp`,
+    // Google requires image to be an ImageObject (array), not a plain string
+    image: [
+      {
+        "@type": "ImageObject",
+        url: `${siteUrl()}/images/hero/hero-main.webp`,
+        width: 1920,
+        height: 1080,
+      },
+    ],
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Al Haya Cleaning Services Office",
       addressLocality: localityLabel,
       addressRegion: regionLabel,
       addressCountry: "AE",
+      // Removed fake streetAddress — causes Google validation warnings
     },
     geo: {
       "@type": "GeoCoordinates",
@@ -64,30 +101,31 @@ export function generateLocalBusinessSchema(city?: string, emirate?: string) {
           { "@type": "City", name: "Umm Al Quwain" },
         ],
     priceRange: "$$",
-    sameAs: [
-      "https://www.instagram.com/alhayacleaningllc/",
-      "https://www.facebook.com/villadeepcleaningservicesdubai/",
-      "https://www.pinterest.com/DeepCleaningdubai/",
-      "https://x.com/alhayacleaner",
+    currenciesAccepted: "AED",
+    paymentAccepted: "Cash, Credit Card, Bank Transfer",
+    sameAs: SOCIAL_PROFILES,
+    aggregateRating: AGGREGATE_RATING,
+    // openingHoursSpecification must be an ARRAY, not a plain object
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        opens: "08:00",
+        closes: "20:00",
+      },
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: 4.9,
-      reviewCount: 500,
-      bestRating: 5,
-      worstRating: 1,
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",
-      ],
-      opens: "08:00",
-      closes: "20:00",
-    },
   };
 }
 
+// ─── Service Schema ────────────────────────────────────────────────────────────
 export function generateServiceSchema(service: {
   name: string;
   description: string;
@@ -96,17 +134,30 @@ export function generateServiceSchema(service: {
 }) {
   return {
     "@context": "https://schema.org",
-    "@type": "CleaningService",
+    // "Service" is correct for individual offerings — "CleaningService" is a business type
+    "@type": "Service",
+    "@id": service.slug
+      ? `${siteUrl()}/services/${service.slug}#service`
+      : undefined,
     name: service.name,
     description: service.description,
     ...(service.slug && { url: `${siteUrl()}/services/${service.slug}` }),
-    ...(service.image && { image: `${siteUrl()}${service.image}` }),
+    ...(service.image && {
+      image: {
+        "@type": "ImageObject",
+        url: `${siteUrl()}${service.image}`,
+      },
+    }),
     serviceType: service.name,
+    category: "Home Cleaning",
+    // Provider links back to the business with its own rating
     provider: {
-      "@type": "CleaningService",
+      "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+      "@id": `${siteUrl()}/#localbusiness-home`,
       name: "Al Haya Cleaning Services",
       url: siteUrl(),
-      telephone: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971563129254",
+      telephone: PHONE,
+      aggregateRating: AGGREGATE_RATING,
       address: {
         "@type": "PostalAddress",
         addressLocality: "Dubai",
@@ -123,34 +174,49 @@ export function generateServiceSchema(service: {
       { "@type": "City", name: "Fujairah" },
       { "@type": "City", name: "Umm Al Quwain" },
     ],
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "AED",
+      },
+    },
   };
 }
 
+// ─── FAQ Schema ────────────────────────────────────────────────────────────────
 export function generateFAQSchema() {
   const faqs = [
     {
       question: "What areas do you serve in the UAE?",
-      answer: "Al Haya Cleaning Services operates across all 7 Emirates: Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, and Umm Al Quwain. We cover 30+ neighborhoods including Jumeirah, Downtown Dubai, Dubai Marina, Palm Jumeirah, Al Reem Island, and more.",
+      answer:
+        "Al Haya Cleaning Services operates across all 7 Emirates: Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, and Umm Al Quwain. We cover 30+ neighborhoods including Jumeirah, Downtown Dubai, Dubai Marina, Palm Jumeirah, Al Reem Island, and more.",
     },
     {
       question: "How much does villa cleaning cost in Dubai?",
-      answer: "Villa cleaning prices depend on size, number of bedrooms, and type of service. Contact us at +971 563 129 254 for a free, no-obligation quote tailored to your villa.",
+      answer:
+        "Villa cleaning prices depend on size, number of bedrooms, and type of service. Contact us at +971 563 129 254 for a free, no-obligation quote tailored to your villa.",
     },
     {
       question: "Do you provide deep cleaning services?",
-      answer: "Yes! Our deep cleaning service covers behind appliances, inside cabinets, bathroom descaling, kitchen degreasing, and every hidden corner. It's ideal as a quarterly refresh or before special events.",
+      answer:
+        "Yes! Our deep cleaning service covers behind appliances, inside cabinets, bathroom descaling, kitchen degreasing, and every hidden corner. It's ideal as a quarterly refresh or before special events.",
     },
     {
       question: "Are your cleaning products safe for children and pets?",
-      answer: "Absolutely. We use eco-friendly, non-toxic cleaning products that are safe for families, children, and pets while still delivering powerful cleaning results.",
+      answer:
+        "Absolutely. We use eco-friendly, non-toxic cleaning products that are safe for families, children, and pets while still delivering powerful cleaning results.",
     },
     {
       question: "Do you offer move-in and move-out cleaning?",
-      answer: "Yes, we provide thorough move-in/move-out cleaning to landlord-inspection standards. Our service helps secure full deposit refunds and ensures your new home is spotless from day one.",
+      answer:
+        "Yes, we provide thorough move-in/move-out cleaning to landlord-inspection standards. Our service helps secure full deposit refunds and ensures your new home is spotless from day one.",
     },
     {
       question: "How can I book a cleaning service?",
-      answer: "You can book via WhatsApp at +971 563 129 254, call us directly, or fill out the contact form on our website. We respond within minutes!",
+      answer:
+        "You can book via WhatsApp at +971 563 129 254, call us directly, or fill out the contact form on our website. We respond within minutes!",
     },
   ];
 
@@ -168,9 +234,8 @@ export function generateFAQSchema() {
   };
 }
 
-export function generateBreadcrumbSchema(
-  items: { name: string; url: string }[]
-) {
+// ─── Breadcrumb Schema ─────────────────────────────────────────────────────────
+export function generateBreadcrumbSchema(items: { name: string; url: string }[]) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
