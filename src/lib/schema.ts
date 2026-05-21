@@ -8,7 +8,7 @@ export function generateOrganizationSchema() {
     url: siteUrl(),
     logo: `${siteUrl()}/images/hero/hero-main.webp`,
     description: "Professional villa, apartment, deep cleaning & office cleaning services across all 7 UAE Emirates.",
-    telephone: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971551275545",
+    telephone: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971563129254",
     email: "Madinatalhaya@gmail.com",
     foundingDate: "2015",
     areaServed: {
@@ -32,7 +32,7 @@ export function generateLocalBusinessSchema(city?: string, emirate?: string) {
     description:
       "Specialized villa deep cleaning, apartment cleaning, and home sanitization services in Dubai and across all 7 UAE Emirates. Eco-friendly products, trained & vetted staff.",
     url: siteUrl(),
-    telephone: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971551275545",
+    telephone: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971563129254",
     email: "Madinatalhaya@gmail.com",
     image: `${siteUrl()}/images/hero/hero-main.webp`,
     address: {
@@ -94,7 +94,7 @@ export function generateServiceSchema(service: {
       "@type": "CleaningService",
       name: "Al Haya Cleaning Services",
       url: siteUrl(),
-      telephone: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971551275545",
+      telephone: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971563129254",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Dubai",
@@ -122,7 +122,7 @@ export function generateFAQSchema() {
     },
     {
       question: "How much does villa cleaning cost in Dubai?",
-      answer: "Villa cleaning prices depend on size, number of bedrooms, and type of service. Contact us at +971 551 275 545 for a free, no-obligation quote tailored to your villa.",
+      answer: "Villa cleaning prices depend on size, number of bedrooms, and type of service. Contact us at +971 563 129 254 for a free, no-obligation quote tailored to your villa.",
     },
     {
       question: "Do you provide deep cleaning services?",
@@ -138,7 +138,7 @@ export function generateFAQSchema() {
     },
     {
       question: "How can I book a cleaning service?",
-      answer: "You can book via WhatsApp at +971 551 275 545, call us directly, or fill out the contact form on our website. We respond within minutes!",
+      answer: "You can book via WhatsApp at +971 563 129 254, call us directly, or fill out the contact form on our website. We respond within minutes!",
     },
   ];
 

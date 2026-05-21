@@ -76,6 +76,26 @@ h1, h2, h3, h4, h5, h6 {
   animation-play-state: paused;
 }
 
+/* Social media marquee rows — pause entire row on hover */
+.social-row {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+}
+
+.social-row-1 {
+  animation: marquee 22s linear infinite;
+}
+
+.social-row-2 {
+  animation: marquee-reverse 28s linear infinite;
+}
+
+.social-track:hover .social-row-1,
+.social-track:hover .social-row-2 {
+  animation-play-state: paused;
+}
+
 @media (max-width: 768px) {
   .animate-marquee {
     animation-duration: 5s;
@@ -83,6 +103,8 @@ h1, h2, h3, h4, h5, h6 {
   .animate-marquee-reverse {
     animation-duration: 5s;
   }
+  .social-row-1 { animation-duration: 14s; }
+  .social-row-2 { animation-duration: 18s; }
 }
 
 @media (prefers-reduced-motion: reduce) {
