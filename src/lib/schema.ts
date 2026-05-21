@@ -35,7 +35,7 @@ export function generateOrganizationSchema() {
     description:
       "Professional villa, apartment, deep cleaning & office cleaning services across all 7 UAE Emirates.",
     telephone: PHONE,
-    email: "Madinatalhaya@gmail.com",
+    email: "Alhayacleaners@gmail.com",
     foundingDate: "2015",
     areaServed: {
       "@type": "Country",
@@ -67,7 +67,7 @@ export function generateLocalBusinessSchema(city?: string, emirate?: string) {
       "Specialized villa deep cleaning, apartment cleaning, and home sanitization services in Dubai and across all 7 UAE Emirates. Eco-friendly products, trained & vetted staff.",
     url: siteUrl(),
     telephone: PHONE,
-    email: "Madinatalhaya@gmail.com",
+    email: "Alhayacleaners@gmail.com",
     // Google requires image to be an ImageObject (array), not a plain string
     image: [
       {

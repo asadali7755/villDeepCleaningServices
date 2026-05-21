@@ -59,8 +59,8 @@ export default function ContactPage() {
                   <Mail className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-medium" style={{ color: "var(--text-primary)" }}>Email</p>
-                    <a href="mailto:Madinatalhaya@gmail.com" className="text-gold hover:underline">
-                      Madinatalhaya@gmail.com
+                    <a href="mailto:Alhayacleaners@gmail.com" className="text-gold hover:underline">
+                      Alhayacleaners@gmail.com
                     </a>
                   </div>
                 </div>
