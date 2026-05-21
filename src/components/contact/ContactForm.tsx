@@ -142,7 +142,7 @@ Message: ${formData.message}`;
           value={formData.phone}
           onChange={(v) => setFormData((p) => ({ ...p, phone: v }))}
           error={errors.phone}
-          placeholder="+971 563 129 254"
+          placeholder="+971 56 312 9254"
           required
         />
         <div>

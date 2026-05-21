@@ -7,10 +7,10 @@ import { Mail, Phone, MapPin } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact Us - Get Free Cleaning Quote in Dubai & UAE",
   description:
-    "Get a free cleaning quote from Al Haya. Call +971 563 129 254 or WhatsApp us for villa cleaning, apartment cleaning, deep cleaning in Dubai, Abu Dhabi, Sharjah & all UAE Emirates.",
+    "Get a free cleaning quote from Al Haya. Call +971 56 312 9254 or WhatsApp us for villa cleaning, apartment cleaning, deep cleaning in Dubai, Abu Dhabi, Sharjah & all UAE Emirates.",
   openGraph: {
     title: "Contact Al Haya Cleaning Services - Free Quote",
-    description: "Get a free cleaning quote. Call +971 563 129 254 or WhatsApp us.",
+    description: "Get a free cleaning quote. Call +971 56 312 9254 or WhatsApp us.",
     images: [{ url: "/images/hero/hero-main.webp" }],
   },
   alternates: {
@@ -51,7 +51,7 @@ export default function ContactPage() {
                   <div>
                     <p className="font-medium" style={{ color: "var(--text-primary)" }}>Phone</p>
                     <a href="tel:+971563129254" className="text-gold hover:underline">
-                      +971 563 129 254
+                      +971 56 312 9254
                     </a>
                   </div>
                 </div>

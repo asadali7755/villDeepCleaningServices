@@ -162,7 +162,7 @@ export function Header() {
             }}
           >
             <Phone className="w-4 h-4" />
-            +971 563 129 254
+            +971 56 312 9254
           </a>
 
           <ThemeToggle />
@@ -233,7 +233,7 @@ export function Header() {
             }}
           >
             <Phone className="w-4 h-4" />
-            +971 563 129 254
+            +971 56 312 9254
           </a>
         </div>
       )}

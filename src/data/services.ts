@@ -18,7 +18,7 @@ export const services: Service[] = [
     icon: "home",
     keywords: ["villa cleaning Dubai", "villa cleaning services Dubai", "villa deep cleaning Dubai", "house cleaning Dubai", "villa cleaning UAE", "luxury villa cleaning Dubai"],
     metaTitle: "Villa Cleaning Dubai | Professional Villa Cleaners UAE",
-    metaDescription: "Top-rated villa cleaning in Dubai & all UAE Emirates. Eco-friendly products, trained & vetted staff. Free quote: +971 563 129 254.",
+    metaDescription: "Top-rated villa cleaning in Dubai & all UAE Emirates. Eco-friendly products, trained & vetted staff. Free quote: +971 56 312 9254.",
     relatedServices: ["deep-cleaning", "sofa-carpet-cleaning", "window-cleaning"],
   },
   {
@@ -38,7 +38,7 @@ export const services: Service[] = [
     icon: "building",
     keywords: ["apartment cleaning Dubai", "flat cleaning Dubai", "apartment cleaning UAE", "studio cleaning Dubai", "home cleaning Dubai", "apartment cleaners Dubai"],
     metaTitle: "Apartment Cleaning Dubai | Studio to Penthouse UAE",
-    metaDescription: "Expert apartment cleaning in Dubai & UAE. Studios to penthouses, one-time or weekly schedules. Free quote: +971 563 129 254.",
+    metaDescription: "Expert apartment cleaning in Dubai & UAE. Studios to penthouses, one-time or weekly schedules. Free quote: +971 56 312 9254.",
     relatedServices: ["deep-cleaning", "move-in-move-out-cleaning", "sofa-carpet-cleaning"],
   },
   {
@@ -58,7 +58,7 @@ export const services: Service[] = [
     icon: "sparkles",
     keywords: ["deep cleaning Dubai", "deep cleaning services Dubai", "intensive cleaning Dubai", "deep clean apartment Dubai", "deep clean villa Dubai", "spring cleaning Dubai UAE"],
     metaTitle: "Deep Cleaning Dubai | Intensive Home Deep Clean UAE",
-    metaDescription: "Deep cleaning in Dubai that reaches every hidden corner. Kitchen degreasing, bathroom descaling, full sanitization. Free quote: +971 563 129 254.",
+    metaDescription: "Deep cleaning in Dubai that reaches every hidden corner. Kitchen degreasing, bathroom descaling, full sanitization. Free quote: +971 56 312 9254.",
     relatedServices: ["mattress-cleaning", "sofa-carpet-cleaning", "curtains-cleaning"],
   },
   {
@@ -78,7 +78,7 @@ export const services: Service[] = [
     icon: "truck",
     keywords: ["move out cleaning Dubai", "move in cleaning Dubai", "end of tenancy cleaning Dubai", "move out cleaning UAE", "handover cleaning Dubai", "deposit refund cleaning Dubai"],
     metaTitle: "Move In Move Out Cleaning Dubai | End of Tenancy UAE",
-    metaDescription: "Professional move-in & move-out cleaning in Dubai to landlord standards. Helps secure your full deposit refund. Free quote: +971 563 129 254.",
+    metaDescription: "Professional move-in & move-out cleaning in Dubai to landlord standards. Helps secure your full deposit refund. Free quote: +971 56 312 9254.",
     relatedServices: ["deep-cleaning", "window-cleaning", "post-construction-cleaning"],
   },
   {
@@ -98,7 +98,7 @@ export const services: Service[] = [
     icon: "briefcase",
     keywords: ["office cleaning Dubai", "commercial cleaning Dubai", "office cleaning UAE", "workplace cleaning Dubai", "company cleaning services Dubai", "office cleaners Dubai"],
     metaTitle: "Office Cleaning Dubai | Commercial Cleaning UAE",
-    metaDescription: "Professional office & commercial cleaning in Dubai & UAE. Flexible scheduling, vetted staff, any office size. Free quote: +971 563 129 254.",
+    metaDescription: "Professional office & commercial cleaning in Dubai & UAE. Flexible scheduling, vetted staff, any office size. Free quote: +971 56 312 9254.",
     relatedServices: ["deep-cleaning", "window-cleaning", "post-construction-cleaning"],
   },
   {
@@ -118,7 +118,7 @@ export const services: Service[] = [
     icon: "armchair",
     keywords: ["sofa cleaning Dubai", "carpet cleaning Dubai", "sofa cleaning UAE", "carpet cleaning UAE", "upholstery cleaning Dubai", "steam cleaning sofa Dubai", "rug cleaning Dubai"],
     metaTitle: "Sofa & Carpet Cleaning Dubai | Steam Cleaning UAE",
-    metaDescription: "Deep steam cleaning for sofas & carpets in Dubai. Removes stains, allergens & pet odors. Safe for all fabrics. Free quote: +971 563 129 254.",
+    metaDescription: "Deep steam cleaning for sofas & carpets in Dubai. Removes stains, allergens & pet odors. Safe for all fabrics. Free quote: +971 56 312 9254.",
     relatedServices: ["mattress-cleaning", "curtains-cleaning", "deep-cleaning"],
   },
   {
@@ -138,7 +138,7 @@ export const services: Service[] = [
     icon: "window",
     keywords: ["window cleaning Dubai", "window cleaning UAE", "glass cleaning Dubai", "window washing Dubai", "exterior window cleaning Dubai", "window cleaners UAE"],
     metaTitle: "Window Cleaning Dubai | Streak-Free Glass Cleaning UAE",
-    metaDescription: "Professional window cleaning in Dubai, interior & exterior. Streak-free results, all building heights. Free quote: +971 563 129 254.",
+    metaDescription: "Professional window cleaning in Dubai, interior & exterior. Streak-free results, all building heights. Free quote: +971 56 312 9254.",
     relatedServices: ["deep-cleaning", "post-construction-cleaning", "villa-cleaning"],
   },
   {
@@ -158,7 +158,7 @@ export const services: Service[] = [
     icon: "hardhat",
     keywords: ["post construction cleaning Dubai", "after renovation cleaning Dubai", "builder clean Dubai", "post construction cleaning UAE", "construction dust cleaning Dubai", "new build cleaning Dubai"],
     metaTitle: "Post Construction Cleaning Dubai | After Renovation UAE",
-    metaDescription: "Heavy-duty post-construction cleaning in Dubai. Removes dust, paint marks & debris after renovations. Move-in ready. Free quote: +971 563 129 254.",
+    metaDescription: "Heavy-duty post-construction cleaning in Dubai. Removes dust, paint marks & debris after renovations. Move-in ready. Free quote: +971 56 312 9254.",
     relatedServices: ["deep-cleaning", "window-cleaning", "move-in-move-out-cleaning"],
   },
   {
@@ -178,7 +178,7 @@ export const services: Service[] = [
     icon: "layout",
     keywords: ["curtains cleaning Dubai", "blinds cleaning UAE", "curtain steam cleaning Dubai", "on-site curtain cleaning UAE", "drapery cleaning Dubai", "curtain sanitization UAE"],
     metaTitle: "Curtains & Blinds Cleaning Dubai | On-Site Steam Cleaning UAE",
-    metaDescription: "Professional on-site curtains deep shampoo & steam cleaning in Dubai & UAE. No removal needed, fast drying. Free quote: +971 563 129 254.",
+    metaDescription: "Professional on-site curtains deep shampoo & steam cleaning in Dubai & UAE. No removal needed, fast drying. Free quote: +971 56 312 9254.",
     relatedServices: ["sofa-carpet-cleaning", "mattress-cleaning", "deep-cleaning"],
   },
   {
@@ -198,7 +198,7 @@ export const services: Service[] = [
     icon: "sparkles",
     keywords: ["mattress cleaning Dubai", "mattress deep cleaning UAE", "bed sanitization Dubai", "mattress shampoo cleaning UAE", "dust mite removal Dubai", "mattress steam cleaning UAE"],
     metaTitle: "Mattress Deep Cleaning Dubai | Bed Sanitization UAE",
-    metaDescription: "Professional mattress deep shampoo & sanitization in Dubai & UAE. Removes dust mites, stains & odors. Free quote: +971 563 129 254.",
+    metaDescription: "Professional mattress deep shampoo & sanitization in Dubai & UAE. Removes dust mites, stains & odors. Free quote: +971 56 312 9254.",
     relatedServices: ["sofa-carpet-cleaning", "curtains-cleaning", "deep-cleaning"],
   },
   {
@@ -218,7 +218,7 @@ export const services: Service[] = [
     icon: "car",
     keywords: ["car interior cleaning Dubai", "car seat cleaning UAE", "car deep cleaning Dubai", "mobile car detailing UAE", "car seat shampoo Dubai", "car interior sanitization UAE"],
     metaTitle: "Car Seats & Interior Cleaning Dubai | Doorstep Service UAE",
-    metaDescription: "Professional car seat & interior deep cleaning in Dubai & UAE. We come to your doorstep. Free quote: +971 563 129 254.",
+    metaDescription: "Professional car seat & interior deep cleaning in Dubai & UAE. We come to your doorstep. Free quote: +971 56 312 9254.",
     relatedServices: ["sofa-carpet-cleaning", "deep-cleaning", "villa-cleaning"],
   },
 ];

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Top-rated villa & apartment cleaning in Dubai & all UAE Emirates. Eco-friendly products, trained staff. Trusted by 5000+ families. Call +971 563 129 254.",
+    "Top-rated villa & apartment cleaning in Dubai & all UAE Emirates. Eco-friendly products, trained staff. Trusted by 5000+ families. Call +971 56 312 9254.",
   keywords: [
     "villa cleaning Dubai", "apartment cleaning Dubai", "deep cleaning Dubai",
     "cleaning services Dubai", "villa cleaning UAE", "office cleaning Dubai",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     locale: "en_AE",
     siteName: "Al Haya Cleaning Services",
     title: "Villa Cleaning Dubai | Al Haya Cleaning Services UAE",
-    description: "Top-rated villa & apartment cleaning in Dubai & all UAE Emirates. Eco-friendly products, trained staff. Trusted by 5000+ families. Call +971 563 129 254.",
+    description: "Top-rated villa & apartment cleaning in Dubai & all UAE Emirates. Eco-friendly products, trained staff. Trusted by 5000+ families. Call +971 56 312 9254.",
     images: [{ url: "/images/hero/hero-main.webp", width: 1920, height: 1080, alt: "Al Haya Cleaning Services - Professional Villa Cleaning Dubai UAE" }],
   },
   twitter: {
