@@ -15,7 +15,12 @@ export function generateOrganizationSchema() {
       "@type": "Country",
       name: "United Arab Emirates",
     },
-    sameAs: [],
+    sameAs: [
+      "https://www.instagram.com/alhayacleaningllc/",
+      "https://www.facebook.com/villadeepcleaningservicesdubai/",
+      "https://www.pinterest.com/DeepCleaningdubai/",
+      "https://x.com/alhayacleaner",
+    ],
   };
 }
 
@@ -59,11 +64,18 @@ export function generateLocalBusinessSchema(city?: string, emirate?: string) {
           { "@type": "City", name: "Umm Al Quwain" },
         ],
     priceRange: "$$",
+    sameAs: [
+      "https://www.instagram.com/alhayacleaningllc/",
+      "https://www.facebook.com/villadeepcleaningservicesdubai/",
+      "https://www.pinterest.com/DeepCleaningdubai/",
+      "https://x.com/alhayacleaner",
+    ],
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "500",
-      bestRating: "5",
+      ratingValue: 4.9,
+      reviewCount: 500,
+      bestRating: 5,
+      worstRating: 1,
     },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
