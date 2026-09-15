@@ -545,6 +545,31 @@ export const emirates: Emirate[] = [
           { question: "Are your products family-safe?", answer: "Yes. We use eco-friendly, non-toxic cleaning products that are safe for families, children, and pets." },
         ],
       },
+      {
+        name: "Dibba Al Hisn", slug: "dibba-al-hisn", emirateSlug: "sharjah",
+        description: "Al Haya brings quality residential cleaning to Dibba Al Hisn, Sharjah's enclave on the UAE's east coast.",
+        metaTitle: "Cleaning in Dibba Al Hisn, Sharjah",
+        metaDescription: "Residential cleaning in Dibba Al Hisn, Sharjah. Quality coastal town property cleaning.",
+        intro:
+          "Dibba Al Hisn is Sharjah's enclave on the UAE's east coast, sitting right beside Dibba Al Fujairah on the same stretch of coastline. Its villas and low-rise apartments enjoy a quieter, coastal pace of life that calls for the same careful, professional cleaning we bring across Sharjah. Al Haya serves Dibba Al Hisn with the full range of residential cleaning services.",
+        sections: [
+          {
+            heading: "Villa & Apartment Cleaning in Dibba Al Hisn",
+            body: "We clean homes throughout Dibba Al Hisn thoroughly — living areas, bedrooms, kitchens, bathrooms, majlis, and outdoor spaces — with deep-clean options for kitchens and bathrooms, and attention to coastal sand and salt on floors and surfaces.",
+          },
+          {
+            heading: "One Team, Both Sides of Dibba",
+            body: "Since Dibba Al Hisn and Dibba Al Fujairah are the same town split across two emirates, our teams cover both sides on the same visit where it's convenient for the customer, with flexible one-time, move-in/move-out, and recurring options.",
+          },
+        ],
+        propertyTypes: ["Villas", "Low-rise apartments", "Family homes", "Holiday homes"],
+        faqs: [
+          { question: "Do you serve Dibba Al Hisn?", answer: "Yes. We provide quality residential cleaning for villas and apartments throughout Dibba Al Hisn, Sharjah." },
+          { question: "Do you also cover Dibba Al Fujairah?", answer: "Yes. Dibba Al Hisn and Dibba Al Fujairah are the same town on either side of the Sharjah–Fujairah line — we serve both." },
+          { question: "Do you offer recurring cleaning in Dibba Al Hisn?", answer: "Yes. We provide weekly, bi-weekly, and monthly visits with consistent staff. Call +971 56 312 9254." },
+          { question: "Are your products family-safe?", answer: "Yes. We use eco-friendly, non-toxic products that are safe for children and pets." },
+        ],
+      },
     ],
   },
   {
@@ -952,6 +977,7 @@ export const emirates: Emirate[] = [
         propertyTypes: ["Coastal villas", "Apartments", "Family homes", "Studios & 1–3 BHK units", "Holiday homes"],
         faqs: [
           { question: "Do you serve Dibba Al Fujairah?", answer: "Yes. We provide quality residential cleaning for villas and apartments throughout Dibba Al Fujairah." },
+          { question: "Do you also cover Dibba Al Hisn on the Sharjah side?", answer: "Yes. Dibba Al Fujairah and Dibba Al Hisn are the same town split across two emirates — we serve both." },
           { question: "Can you handle coastal sand and salt?", answer: "Yes. We give extra attention to floors, glass, and surfaces where coastal sand and salt collect." },
           { question: "Do you offer recurring cleaning?", answer: "Yes. We provide weekly, bi-weekly, and monthly visits with consistent staff. Call +971 56 312 9254." },
           { question: "Are your products family-safe?", answer: "Yes. We use eco-friendly, non-toxic products that are safe for children and pets." },
