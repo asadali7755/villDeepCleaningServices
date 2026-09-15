@@ -546,7 +546,7 @@ export const emirates: Emirate[] = [
         ],
       },
       {
-        name: "Dibba Al Hisn", slug: "dibba-al-hisn", emirateSlug: "sharjah",
+        name: "Dibba Al Hisn", slug: "dibba-al-hisn", emirateSlug: "sharjah", image: "/images/areas/sharjah/dibba-al-hisn.webp",
         description: "Al Haya brings quality residential cleaning to Dibba Al Hisn, Sharjah's enclave on the UAE's east coast.",
         metaTitle: "Cleaning in Dibba Al Hisn, Sharjah",
         metaDescription: "Residential cleaning in Dibba Al Hisn, Sharjah. Quality coastal town property cleaning.",
