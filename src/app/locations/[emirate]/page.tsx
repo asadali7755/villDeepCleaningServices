@@ -209,13 +209,13 @@ export default async function EmiratePage({ params }: PageProps) {
             Need Cleaning in {emirate.name}?
           </h2>
           <p className="mb-6" style={{ color: "var(--text-secondary)" }}>
-            Get a free quote for professional cleaning services in your area.
+            Get a free visit for professional cleaning services in your area.
           </p>
-          <Button href="/contact" size="lg">Get a Free Quote</Button>
+          <Button href="/contact" size="lg">Get a Free Visit</Button>
           <RequestCallButton source={`${emirate.name} location page`} size="lg" className="ml-3" />
           <QuoteCard
             source={`${emirate.name} location page`}
-            heading={`Free quote in ${emirate.name}`}
+            heading={`Free visit in ${emirate.name}`}
             className="mt-8 max-w-md mx-auto text-left"
           />
         </div>

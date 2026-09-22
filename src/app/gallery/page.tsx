@@ -58,7 +58,7 @@ export default function GalleryPage() {
         </div>
         <QuoteCard
           source="Gallery page"
-          heading="Like what you see? Get a free quote"
+          heading="Like what you see? Get a free visit"
           className="max-w-md mx-auto"
         />
       </section>

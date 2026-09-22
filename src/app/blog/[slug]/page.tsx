@@ -61,7 +61,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
         <QuoteCard
           source={`Blog post — ${post.title}`}
-          heading="Need this done properly? Get a free quote"
+          heading="Need this done properly? Get a free visit"
           className="max-w-md mx-auto"
         />
       </section>

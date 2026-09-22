@@ -6,12 +6,12 @@ import { generateLocalBusinessSchema } from "@/lib/schema";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Us - Get Free Cleaning Quote in Dubai & UAE",
+  title: "Contact Us - Get a Free Cleaning Visit in Dubai & UAE",
   description:
-    "Get a free cleaning quote from Al Haya. Call +971 56 312 9254 or WhatsApp us for villa cleaning, apartment cleaning, deep cleaning in Dubai, Abu Dhabi, Sharjah & all UAE Emirates.",
+    "Get a free cleaning visit from Al Haya. Call +971 56 312 9254 or WhatsApp us for villa cleaning, apartment cleaning, deep cleaning in Dubai, Abu Dhabi, Sharjah & all UAE Emirates.",
   openGraph: {
-    title: "Contact Al Haya Cleaning Services - Free Quote",
-    description: "Get a free cleaning quote. Call +971 56 312 9254 or WhatsApp us.",
+    title: "Contact Al Haya Cleaning Services - Free Visit",
+    description: "Get a free cleaning visit. Call +971 56 312 9254 or WhatsApp us.",
     images: [{ url: "/images/hero/hero-main.webp" }],
   },
   alternates: {
@@ -30,7 +30,7 @@ export default function ContactPage() {
             Get in <span className="text-gold">Touch</span>
           </h1>
           <p className="text-lg" style={{ color: "var(--text-secondary)" }}>
-            Request a free quote or ask us anything about our cleaning services.
+            Request a free visit or ask us anything about our cleaning services.
           </p>
         </div>
       </section>

@@ -341,12 +341,12 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
               Ready to Book {service.name}?
             </h3>
             <p className="mb-6" style={{ color: "var(--text-secondary)" }}>
-              Contact us today for a free, no-obligation quote.
+              Contact us today for a free, no-obligation visit.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <RequestCallButton source={`Service page — ${service.name}`} size="lg" />
               <Button href="/contact" size="lg">
-                Get a Free Quote
+                Get a Free Visit
               </Button>
               <WhatsAppLink
                 href={`https://wa.me/${(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971563129254").replace(/[^0-9]/g, "")}?text=${encodeURIComponent(`Hi! I'm interested in your ${service.name} service.`)}`}
@@ -360,7 +360,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
             <QuoteCard
               defaultService={service.slug}
               source={`Service page — ${service.name}`}
-              heading={`Free quote for ${service.name}`}
+              heading={`Free visit for ${service.name}`}
               className="mt-8 max-w-md mx-auto text-left"
             />
             <TrustBadges className="mt-8" />

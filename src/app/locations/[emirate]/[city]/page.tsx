@@ -256,13 +256,13 @@ export default async function CityPage({ params }: PageProps) {
             Book Cleaning in {city.name}
           </h2>
           <p className="mb-6" style={{ color: "var(--text-secondary)" }}>
-            Professional cleaning services at your doorstep. Get a free quote today.
+            Professional cleaning services at your doorstep. Get a free visit today.
           </p>
-          <Button href="/contact" size="lg">Get a Free Quote</Button>
+          <Button href="/contact" size="lg">Get a Free Visit</Button>
           <RequestCallButton source={`${city.name}, ${emirate.name} area page`} size="lg" className="ml-3" />
           <QuoteCard
             source={`${city.name}, ${emirate.name} area page`}
-            heading={`Free quote in ${city.name}`}
+            heading={`Free visit in ${city.name}`}
             className="mt-8 max-w-md mx-auto text-left"
           />
         </div>

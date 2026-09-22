@@ -178,7 +178,7 @@ export default async function ServiceAreaPage({ params }: PageProps) {
         <QuoteCard
           defaultService={service.slug}
           source={`${service.name} in ${city.name}`}
-          heading={`Free ${service.name.toLowerCase()} quote in ${city.name}`}
+          heading={`Free ${service.name.toLowerCase()} visit in ${city.name}`}
           className="mb-12 max-w-md mx-auto"
         />
 
@@ -233,9 +233,9 @@ export default async function ServiceAreaPage({ params }: PageProps) {
             Book {service.name} in {city.name}
           </h2>
           <p className="mb-6" style={{ color: "var(--text-secondary)" }}>
-            Same-day slots available. Get a free quote in minutes.
+            Same-day slots available. Get a free visit in minutes.
           </p>
-          <Button href="/contact" size="lg">Get a Free Quote</Button>
+          <Button href="/contact" size="lg">Get a Free Visit</Button>
           <RequestCallButton
             source={`${service.name} in ${city.name}`}
             size="lg"

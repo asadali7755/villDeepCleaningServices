@@ -133,7 +133,7 @@ export default function BlogIndexPage() {
         </div>
         <QuoteCard
           source="Blog index"
-          heading="Get a free cleaning quote"
+          heading="Get a free cleaning visit"
           className="max-w-md mx-auto"
         />
       </section>

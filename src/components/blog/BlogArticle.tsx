@@ -137,8 +137,8 @@ export function BlogArticle({ post }: BlogArticleProps) {
             <div className="relative">
               <Sparkles className="w-7 h-7 text-gold mx-auto mb-3" />
               <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-3">Want it done for you?</h3>
-              <p className="text-gray-300 mb-6 max-w-md mx-auto">Get a free, no-obligation quote for professional cleaning across Dubai &amp; the UAE.</p>
-              <Button href="/contact" size="lg">Get a Free Quote</Button>
+              <p className="text-gray-300 mb-6 max-w-md mx-auto">Get a free, no-obligation visit for professional cleaning across Dubai &amp; the UAE.</p>
+              <Button href="/contact" size="lg">Get a Free Visit</Button>
             </div>
           </div>
 
@@ -210,7 +210,7 @@ export function BlogArticle({ post }: BlogArticleProps) {
             Villa, apartment &amp; deep cleaning across all 7 UAE Emirates. Trained teams, eco-friendly products.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact" size="lg">Get a Free Quote</Button>
+            <Button href="/contact" size="lg">Get a Free Visit</Button>
             <Link href="/blog" className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-semibold border border-gold/40 text-gold hover:bg-gold/10 transition-colors">
               More Articles <ArrowRight className="w-4 h-4" />
             </Link>

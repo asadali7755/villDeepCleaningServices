@@ -30,7 +30,7 @@ export function Hero() {
         </h2>
         <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
           <Button href="/contact" size="lg">
-            Get a Free Quote
+            Get a Free Visit
           </Button>
           <RequestCallButton source="Hero" size="lg" />
           <Button href="#services" variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
@@ -42,7 +42,7 @@ export function Hero() {
             most of them leave. */}
         <QuoteCard
           source="Hero"
-          heading="Get your free quote"
+          heading="Get your free visit"
           className="mt-10 max-w-md mx-auto text-left"
         />
       </div>

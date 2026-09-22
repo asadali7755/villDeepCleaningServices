@@ -26,10 +26,11 @@ interface QuoteCardProps {
 export function QuoteCard({
   defaultService = "",
   source,
-  heading = "Get a free quote",
+  heading = "Get a free visit",
   className = "",
 }: QuoteCardProps) {
   const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+971563129254";
+  const waPhotoHref = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hi, I'd like a free quote — here are photos of what needs cleaning:")}`;
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -107,7 +108,7 @@ export function QuoteCard({
       style={{ backgroundColor: "var(--bg-surface)", borderColor: "var(--border-color)" }}
     >
       <span className="text-xs font-semibold tracking-widest uppercase text-gold">
-        Free Quote Request
+        Free Visit Request
       </span>
       <h3
         className="font-display text-xl font-bold mt-2 mb-4"
@@ -158,7 +159,7 @@ export function QuoteCard({
             className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-semibold text-sm bg-gold text-black hover:bg-gold-dark transition-colors disabled:opacity-60"
           >
             <Send className="w-4 h-4" />
-            {status === "sending" ? "Sending…" : "Send request"}
+            {status === "sending" ? "Sending…" : "Request visit"}
           </button>
           <a
             href={`tel:${phoneNumber}`}
@@ -170,7 +171,10 @@ export function QuoteCard({
         </div>
 
         <p className="text-xs pt-1" style={{ color: "var(--text-secondary)" }}>
-          We reply within minutes — 7 days a week.
+          We reply within minutes — 7 days a week.{" "}
+          <a href={waPhotoHref} target="_blank" rel="noopener noreferrer" className="underline">
+            Prefer to WhatsApp photos instead?
+          </a>
         </p>
       </div>
     </div>

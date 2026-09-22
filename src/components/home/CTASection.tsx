@@ -16,12 +16,12 @@ export function CTASection({ source = "Homepage CTA" }: { source?: string } = {}
           Ready for a <span className="text-gold">Spotless Space</span>?
         </h2>
         <p className="text-lg mb-8 max-w-2xl mx-auto" style={{ color: "var(--text-secondary)" }}>
-          Get a free, no-obligation quote today. Our team is ready to transform
+          Get a free, no-obligation visit today. Our team is ready to transform
           your home or office with our premium cleaning services.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button href="/contact" size="lg">
-            Request a Free Quote
+            Request a Free Visit
           </Button>
           <RequestCallButton source={source} size="lg" />
           <WhatsAppLink href={whatsappUrl} source="homepage_cta" variant="secondary" size="lg">
