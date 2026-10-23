@@ -11,6 +11,8 @@ export interface Service {
   metaDescription: string;
   relatedServices?: string[];
   faqs?: FAQItem[];
+  /** Contextual link to a sister specialist site (sofa site from the sofa service page). */
+  specialistLink?: { lead: string; label: string; href: string; links?: { label: string; href: string }[] };
 }
 
 export interface Emirate {

@@ -150,6 +150,15 @@ export const services: Service[] = [
     metaTitle: "Sofa & Carpet Cleaning Dubai | Steam Cleaning UAE",
     metaDescription: "Deep steam cleaning for sofas & carpets in Dubai. Removes stains, allergens & pet odors. Safe for all fabrics. Free quote: +971 56 312 9254.",
     relatedServices: ["mattress-cleaning", "curtains-cleaning", "deep-cleaning"],
+    specialistLink: {
+      lead: "Only need your sofa done? Our sofa team runs a dedicated site with before-and-after photos, videos and guides for every type of sofa.",
+      label: "Sofa cleaning & shampooing in Dubai",
+      href: "https://sofashampooingdubai.com/",
+      links: [
+        { label: "Leather sofa cleaning", href: "https://sofashampooingdubai.com/leather-sofa-cleaning" },
+        { label: "Sofa stain removal", href: "https://sofashampooingdubai.com/sofa-stain-removal" },
+      ],
+    },
     faqs: [
       { question: "How long do sofas and carpets take to dry after cleaning?", answer: "Our high-suction extraction leaves furniture and carpets damp-dry, so they're usually ready to use within a few hours depending on fabric and humidity." },
       { question: "Can you remove tough stains and pet odors?", answer: "Yes. We pre-treat and spot-clean stains, then use deep shampoo and high-temperature steam to lift heavy stains, pet odors, and dust-mite allergens." },

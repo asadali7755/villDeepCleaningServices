@@ -91,6 +91,22 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
             ))}
           </div>
 
+          {service.specialistLink && (
+            <div className="mb-16 rounded-2xl border border-gold/30 bg-gold/5 p-6 md:p-8">
+              <p className="text-lg leading-relaxed mb-4" style={{ color: "var(--text-secondary)" }}>{service.specialistLink.lead}</p>
+              <div className="flex flex-wrap gap-3">
+                <a href={service.specialistLink.href} className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 font-semibold text-black hover:opacity-90 transition-opacity">
+                  {service.specialistLink.label} <ChevronRight className="w-4 h-4" />
+                </a>
+                {service.specialistLink.links?.map((l) => (
+                  <a key={l.href} href={l.href} className="inline-flex items-center rounded-full border border-gold/40 px-5 py-2.5 font-semibold text-gold hover:bg-gold/10 transition-colors">
+                    {l.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Benefits — dark card with image bg */}
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <Image
