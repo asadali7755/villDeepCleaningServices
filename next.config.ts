@@ -1,7 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Static export for Cloudflare Pages (Vercel Hobby was paused on 7 Nov 2026).
+  // The contact form runs as a Pages Function (functions/api/contact.js);
+  // redirects() is turned into public/_redirects by scripts/cf-redirects.ts and
+  // headers() is mirrored in public/_headers, since an export cannot run them.
+  output: "export",
   images: {
+    unoptimized: true,
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000,
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
