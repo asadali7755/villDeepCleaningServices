@@ -1,13 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Static export for Cloudflare Pages (Vercel Hobby was paused on 7 Nov 2026).
-  // The contact form runs as a Pages Function (functions/api/contact.js);
-  // redirects() is turned into public/_redirects by scripts/cf-redirects.ts and
-  // headers() is mirrored in public/_headers, since an export cannot run them.
-  output: "export",
+  // Hostinger shared hosting caps how many processes a build may start, so
+  // keep the build to one worker.
+  experimental: { cpus: 1 },
+
   images: {
-    unoptimized: true,
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000,
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
@@ -18,6 +16,14 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      // ── Bare domain -> www (Vercel's domain settings used to do this) ────
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "villadeepcleaning.com" }],
+        destination: "https://www.villadeepcleaning.com/:path*",
+        permanent: true,
+      },
+
       // ── WordPress date-based post URLs (/2025/01/title/) ─────────────────
       { source: "/2025/:path*", destination: "/", permanent: true },
       { source: "/2024/:path*", destination: "/", permanent: true },
