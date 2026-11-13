@@ -17,7 +17,7 @@ export const services: Service[] = [
     image: "/images/services/villa-cleaning.webp",
     icon: "home",
     keywords: ["villa cleaning Dubai", "villa cleaning services Dubai", "villa deep cleaning Dubai", "house cleaning Dubai", "villa cleaning UAE", "luxury villa cleaning Dubai"],
-    metaTitle: "Villa Cleaning Dubai | Professional Villa Cleaners UAE",
+    metaTitle: "Villa Cleaning Dubai | Villa Deep Cleaning Services UAE",
     metaDescription: "Top-rated villa cleaning in Dubai & all UAE Emirates. Eco-friendly products, trained & vetted staff. Free quote: +971 56 312 9254.",
     relatedServices: ["deep-cleaning", "sofa-carpet-cleaning", "window-cleaning"],
     faqs: [
@@ -312,7 +312,7 @@ export const services: Service[] = [
     image: "/images/services/deep-cleaning.webp",
     icon: "sparkles",
     keywords: ["floor care Dubai", "floorcare Dubai", "floor cleaning services Dubai", "marble polishing Dubai", "tile and grout cleaning Dubai", "floor polishing Dubai", "floorcare Palm Jumeirah"],
-    metaTitle: "Floor Care Dubai | Marble Polishing, Tile & Grout Cleaning UAE",
+    metaTitle: "Floor Polishing Dubai | Marble, Tile & Grout Floor Care UAE",
     metaDescription: "Professional floor care in Dubai: marble polishing, tile & grout scrubbing, sealing and restoration for villas and offices. Free quote: +971 56 312 9254.",
     relatedServices: ["deep-cleaning", "villa-cleaning", "post-construction-cleaning"],
     faqs: [
@@ -323,6 +323,18 @@ export const services: Service[] = [
     ],
   },
 ];
+
+// "<service> price/cost dubai" is searched for most services: every service
+// page answers it (no figure, since the quote depends on the job).
+const COST_QUESTION = /(cost|price|pricing|how much)/i;
+for (const s of services) {
+  if (s.faqs && !s.faqs.some((f) => COST_QUESTION.test(f.question))) {
+    s.faqs.unshift({
+      question: `How much does ${s.name.toLowerCase()} cost in Dubai?`,
+      answer: `It depends on the size of the job, the materials and how much cleaning is needed. Send a few photos on WhatsApp and we reply with a free quote, or we visit to check before quoting larger jobs.`,
+    });
+  }
+}
 
 export function getServiceBySlug(slug: string): Service | undefined {
   return services.find((s) => s.slug === slug);

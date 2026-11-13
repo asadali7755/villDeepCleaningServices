@@ -1012,6 +1012,16 @@ export const emirates: Emirate[] = [
   },
 ];
 
+// Each emirate page answers "how much does cleaning cost in <emirate>".
+for (const e of emirates) {
+  if (e.faqs && !e.faqs.some((f) => /(cost|price|pricing|how much)/i.test(f.question))) {
+    e.faqs.unshift({
+      question: `How much does villa or apartment cleaning cost in ${e.name}?`,
+      answer: `It depends on the size of the home, the type of clean (regular, deep or move-in/move-out) and its condition. Send a few photos on WhatsApp and we reply with a free quote for your home in ${e.name}.`,
+    });
+  }
+}
+
 export function getEmirateBySlug(slug: string): Emirate | undefined {
   return emirates.find((e) => e.slug === slug);
 }
